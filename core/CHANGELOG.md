@@ -1,5 +1,59 @@
 # @tabler/core
 
+## 1.6.0
+
+### Minor Changes
+
+- a13ebc3: Added `Autosize` component to `tabler.js` with the `autosize` plugin bundled, plus `update()` and `dispose()` methods.
+- 0e2faa0: Added a `Clipboard` copy button and dropped the `clipboard` package; the browser API does the work.
+- e63fe34: Added a `Confetti` component with `data-bs-toggle="confetti"`, a demo page and docs.
+- 118380d: Added `Datepicker` plugin built on Vanilla Calendar Pro with a `datepicker` preview page, and removed Litepicker from `dist/libs`.
+- 0905918: Updated the default gray scale (`$gray-50`…`$gray-950`) to `neutral`; the old one stays as `data-bs-theme-base="gray"`.
+- 744a09c: Changed the focus indicator from a `box-shadow` ring to an `outline`, following Bootstrap v6. `focus-ring($offset, $color)` is the single focus mixin, driven by the new `--focus-ring`, `--focus-ring-offset` and `--focus-ring-color` tokens. Removed the `$*-focus-box-shadow` Sass variables and the
+  `--btn-focus-box-shadow`, `--pagination-focus-box-shadow`, `--accordion-btn-focus-box-shadow` and `--btn-close-focus-shadow` custom properties.
+- be30919: Added `.legend` component with `.legend-dot`, `.legend-value`, `.legend-off` and `.legend-list`, plus `Legend` Astro component.
+- a984752: Added `.legend-lg`, `.legend-unit` and `.legend-list-divided` for large legend items with a big value and a unit.
+- c1786b5: Added `dialog::backdrop` styling so a native `<dialog>` uses the same backdrop as modals.
+- 7e7b2ce: Added `.navbar-floating` and the `data-bs-navbar-style="floating"` theme setting for a navbar and sidebar with a `0.5rem` gap.
+- 7e7b2ce: Added `.offcanvas-floating` and the `data-bs-offcanvas-style="floating"` theme setting for an offcanvas with a `0.5rem` gap.
+- 0fe02b3: Removed the `--tblr-*-rgb` variables and moved color mixing to `color-mix(in oklab)`; use `color-mix()` instead of `rgba(var(--tblr-*-rgb))`.
+- a744b84: Added the `OtpInput` component with grouped slots, masking, and validation states.
+- a984752: Added `.page-section-title` and `.page-section-description` classes for section headings inside the page body.
+- 107e493: Updated the color palette to `oklch()`, masked the checkbox, switch, toggler and carousel icons, and removed the `tabler` JS namespace.
+- a9efcc2: Added the Signal component (`.signal`): stepped bars that show a level such as priority, with a `Signal.astro` wrapper.
+- bd60d5f: Added SortableJS drag styles and turned on `forceFallback` by default so `data-sortable` lists drag a styled, tilted copy.
+- 5d5be36: Added `Sparkline` component: inline SVG line, bar and circle charts from `data-bs-values`, with size classes and signed bars.
+- 9669c0a: Added a `Strength` password meter with a segmented bar, configurable scoring and `change.bs.strength`.
+- 0776b88: Added a `switch-icon-loading` state and a `tabler:switch-icon-toggle` event that waits for a promise before switching.
+- bd5c010: Added `SwitchIcon`, `CountUp`, `InputMask` and `Sortable` components to `tabler.js`, with countUp.js bundled.
+
+### Patch Changes
+
+- da79879: Updated `.accordion-button` line height to `1.25rem` via the `--tblr-accordion-btn-line-height` variable.
+- b295d84: Fixed `.accordion-button-toggle-plus` with sprite icons by rotating the plus into a close icon instead of hiding a path.
+- 62408b8: Replaced the `autosize` package with a dependency-free `Autosize` component that fires `resized.bs.autosize`.
+- ea10f0e: Replaced the `countup.js` package with a dependency-free `CountUp` component that respects `prefers-reduced-motion`.
+- cac3179: Fixed the ApexCharts tooltip arrow staying white in Safari by painting `.apexcharts-tooltip-arrow` directly.
+- db903c3: Fixed `.card-status-*` strip corners not matching the card's `border-radius`.
+- ce52364: Fixed the default browser border and padding on `.form-help` when it is a `<button>`.
+- 67a3795: Fixed `.input-group-flat` so `.input-group-text` follows the `.is-valid` and `.is-invalid` border and focus colors.
+- 127c56b: Fixed the empty gutter to the right of the navbar on non-scrolling pages by dropping `scrollbar-gutter: stable` from `html`.
+- 7e7b2ce: Fixed the menu row of the two-row navbar staying light with `data-bs-navbar-theme` set to `dark` or `primary`.
+- 64dd529: Fixed the `.form-selectgroup-label` icon-only margin applying to icons nested deeper inside the label.
+- 9268348: Fixed `.stretched-link` on a `.btn` so the link covers its whole container instead of only the button.
+- 61b492e: Fixed `.table-striped` and `.table-striped-columns` overriding a row or cell that sets its own background. A `<tr>` or `<td>` carrying `.bg-*`, `.table-*`, `.text-bg-*` or an inline `background` now keeps that background instead of being repainted by the stripe.
+- a9efcc2: Fixed Tom Select growing taller on focus when the selected item has an indicator (avatar, flag, badge).
+- c99a436: Fixed `.is-valid` and `.is-invalid` border colors and focus ring on Tom Select `.form-select` fields.
+- 57e213b: Renamed `.form-hint` to Bootstrap's `.form-text`, with `.form-hint` kept as a deprecated alias.
+- cc7afaf: Fixed a disabled off `.form-switch` looking the same as an enabled one by filling its track and darkening the knob.
+- 03985e3: Fixed text badges in navbar `.nav-link` overlapping the title and causing horizontal scroll in the stacked menu.
+- 2b99ed5: Fix invisible text selection inside `pre` blocks in light mode
+- c1786b5: Added `overscroll-behavior: contain` to `.modal`, `.modal-body`, `.offcanvas-body` and `.dropdown-menu-scrollable`.
+- 3e60b18: Fixed `.navbar-expand`, `.btn-link:hover`, `--*-darken`, `.ribbon` fold colors, `.avatar-brand` z-index and dark mode literals.
+- 1ffbeec: Updated the Bootstrap component port to strict TypeScript with typed `ComponentConfig` types and added `eventActionOnPlugin`.
+- 3e60b18: Fixed light theme islands losing `data-bs-theme-primary` and radius, and added `.theme-dark` to the dark mode selectors.
+- 8db40cd: Fixed Tom Select controls being shorter than `.form-control` by using Tabler input metrics in all sizes.
+
 ## 1.5.1
 
 ### Patch Changes
