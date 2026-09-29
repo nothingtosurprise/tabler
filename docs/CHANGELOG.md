@@ -1,5 +1,15 @@
 # @tabler/docs
 
+## 1.6.1
+
+### Patch Changes
+
+- d104e78: Fixed Confetti ignoring the trigger's `data-bs-*` options when `data-bs-target` points elsewhere.
+- 01857d2: Fixed `Sparkline` wiping author content when empty or disposed, keeping stale tween attributes and skipping single-value lines.
+- 6c1d546: Removed JS string evaluation from `Chart` axis formatters in `charts.json` and the `extraJs` prop from `Signature`.
+- 4b02b6a: Fixed `new Tooltip()`, `new Popover()` and `new Dropdown()` on auto-initialised elements ignoring options and doubling listeners.
+- 0fdf1b7: Documented the swapped `$table-sort-asc-bg-image` and `$table-sort-desc-bg-image` variables in the 1.6 upgrade guide.
+
 ## 1.6.0
 
 ### Minor Changes
